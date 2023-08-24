@@ -1,0 +1,88 @@
+/* LandingPage.css */
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 100%;
+}
+
+/* Styles for the main container */
+.landing-page {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styles */
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Feature section styles */
+.features {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.feature {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Download section styles */
+.download {
+  margin-bottom: 40px;
+}
+
+.download h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.app-store-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.app-store-link {
+  margin: 0 10px;
+}
+
+/* Footer styles */
+footer {
+  font-size: 14px;
+  color: #888;
+  margin-top: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
