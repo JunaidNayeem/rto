@@ -4,14 +4,20 @@ import "./LandingPage.css"; // Import your CSS file for styling
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showRefundModal, setShowRefundModal] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
   };
   const handleOk = () => {
     setIsModalOpen(false);
+    setShowRefundModal(false);
   };
   const handleCancel = () => {
     setIsModalOpen(false);
+    setShowRefundModal(false);
+  };
+  const RefundModal = () => {
+    setShowRefundModal(true);
   };
   return (
     <div className="landing-page">
@@ -52,9 +58,12 @@ const LandingPage = () => {
         >
           Privacy & Policy
         </Button>
+        <Button style={{ margin: "10px" }} type="primary" onClick={RefundModal}>
+          Return & refund policy
+        </Button>
         <Modal
           title="Privacy Policy"
-          visible={isModalOpen} // Use visible instead of open
+          open={isModalOpen} // Use visible instead of open
           onOk={handleOk}
           onCancel={handleCancel}
         >
@@ -117,6 +126,42 @@ const LandingPage = () => {
             shall be subject to the exclusive jurisdiction of the courts.
           </p>
         </Modal>
+        <Modal
+          title="Return and Refund Policy"
+          open={showRefundModal}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <h3>Return and Refund Policy for MyRTO App</h3>
+          <p>
+            Thank you for using MyRTO App. We strive to provide you with the
+            best possible experience for managing road tax and RTO services. If
+            you have any concerns about your purchase or transaction, please
+            read our Return and Refund Policy below.
+          </p>
+          <h4>Returns</h4>
+          <p>
+            We do not accept returns for road tax payments or RTO services as
+            they are government-regulated transactions. Once a payment is made,
+            it cannot be reversed or refunded. Please ensure that all the
+            details provided during the payment process are accurate.
+          </p>
+          <h4>Refunds</h4>
+          <p>
+            Refunds are only applicable in cases of overpayment or duplicate
+            payments. If you believe you have made an erroneous payment or have
+            been charged multiple times for the same transaction, please contact
+            our customer support immediately.
+          </p>
+          <h4>Contact Us</h4>
+          <p>
+            If you have any questions or concerns about our Return and Refund
+            Policy or need assistance with a refund request, please don't
+            hesitate to contact our customer support team at [Your Contact
+            Information].
+          </p>
+        </Modal>
+
         <p>&copy; 2023 MyRTO App. All rights reserved.</p>
       </footer>
     </div>
